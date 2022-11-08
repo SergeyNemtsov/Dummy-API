@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "1a71c2ce-7c8b-499c-8fdd-d88fab1ae3d3",
+		"name": "Урок 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23701377"
+	},
+	"item": [
+		{
+			"name": "GET LIST/POST",
+			"item": [
+				{
+					"name": "GET(page=0/limit=5)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=0&limit=5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/page=1/limit=6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=1&limit=6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/page=998/limit=49",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=998&limit=49",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "998"
+								},
+								{
+									"key": "limit",
+									"value": "49"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/page=999/limit=50",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=999&limit=50",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "999"
+								},
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/page=1000/limit=\" \"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=1000&limit=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1000"
+								},
+								{
+									"key": "limit",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/page=qw/limit=г",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?page=qw&limit=г",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "qw"
+								},
+								{
+									"key": "limit",
+									"value": "г"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/limit=4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?limit=4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/limit=51",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post?limit=51",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "51"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CREATE POST",
+			"item": [
+				{
+					"name": "text=6/img=url/likes=0/link=6/tag=house/owner=id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"qwerty\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 0,\r\n\"link\": \"url.ru\",\r\n\"tags\": [\r\n    \"House\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=7/likes=1/link=7/tag=123",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"qwerty1\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 1,\r\n\"link\": \"ur1l.ru\",\r\n\"tags\": [\r\n    112\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=999/likes=2/link=199/tag=&&",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"qwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушк\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 2,\r\n\"link\": \"urlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruq.ru\",\r\n\"tags\": [\r\n    \"&&\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=1000/likes=49/link=200/tag=кириллица",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"2qwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушк\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 49,\r\n\"link\": \"2urlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruq.ru\",\r\n\"tags\": [\r\n    \"Москва\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET метод",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"qwerty\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 0,\r\n\"link\": \"url.ru\",\r\n\"tags\": [\r\n    \"House\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=\" \"img=\" \"/likes=\" \"/link=\" \"/tag=\" \"",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"\",\r\n\"image\": \"\",\r\n\"likes\": \"\",\r\n\"link\": \"\",\r\n\"tags\": [\r\n    \"\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=5/link=5/img=без домена",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"йцуке\",\r\n\"image\": \"ur.\",\r\n\"likes\": \"1\",\r\n\"link\": \"qw.ru\",\r\n\"tags\": [\r\n    \"qwf\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "text=1001/link=201",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"12qwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушкqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушqwertyгнушк\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 49,\r\n\"link\": \"12urlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruqwerturlruq.ru\",\r\n\"tags\": [\r\n    \"Москвукпушршцепгршдпшцукрпшоурпшцукпшва\"\r\n],\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ext=без ключа/link=без ключа/tag=без ключа",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "указать id поста/указать дату публикации",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"635e730469d00d2a8fd7c826\",\r\n\"text\": \"qwerty\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 0,\r\n\"link\": \"url.ru\",\r\n\"tags\": [\r\n    \"House\"\r\n],\r\n\"publishDate\": \"2022-10-30T12:50:12.065Z\",\r\n\"owner\": \"635e56b569d00d0ecbd7b542\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

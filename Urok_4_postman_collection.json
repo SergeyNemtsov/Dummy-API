@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "8189c62b-d0b6-45fc-9d77-a21d9b0a64f0",
+		"name": "Урок 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23701377"
+	},
+	"item": [
+		{
+			"name": "Getpostlist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Check body data is Array\", function () {\r",
+							"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].id).to.be.an(\"String\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].image is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].image).to.be.an(\"String\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].likes is number\", function () {\r",
+							"    pm.expect(jsonData.data[0].likes).to.be.an(\"number\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body data[0].tags is array\", function () {\r",
+							"    pm.expect(jsonData.data[0].tags).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].text is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].text).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].publishDate is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].publishDate).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].owner.id is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.id).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].owner.title is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.title).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].owner.firstName is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.firstName).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].owner.lastName is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.lastName).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[0].owner.picture is string\", function () {\r",
+							"    pm.expect(jsonData.data[0].owner.picture).to.be.an(\"string\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body data[19].id is string\", function () {\r",
+							"    pm.expect(jsonData.data[19].id).to.be.an(\"String\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body data[20].id is Undefined\", function () {\r",
+							"    pm.expect(jsonData.data[20]).to.be.an(\"undefined\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check total is Number\", function () {\r",
+							"    pm.expect(jsonData.total).to.be.a(\"number\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/post",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Createpost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"postId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body text\", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"qwerty\");\r",
+							"});\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\");\r",
+							"});\r",
+							"pm.test(\"Check body likes\", function () {\r",
+							"    pm.expect(jsonData.likes).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body link\", function () {\r",
+							"    pm.expect(jsonData.link).to.eql(\"url.ru\");\r",
+							"});\r",
+							"pm.test(\"Check body tags\", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"House\"]);\r",
+							"});\r",
+							"pm.test(\"Check body owner.id\", function () {\r",
+							"    pm.expect(jsonData.owner.id).to.eql(\"6363a8cf7d4f800976f544f8\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.title\", function () {\r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body owner.firstName\", function () {\r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Игорь\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Red\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.picture\", function () {\r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"foto.ru\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate\", function () {\r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"qwerty\",\r\n\"image\": \"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\",\r\n\"likes\": 0,\r\n\"link\": \"url.ru\",\r\n\"tags\": [\r\n    \"House\"\r\n],\r\n\"owner\": \"6363a8cf7d4f800976f544f8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post/create",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetpostbyID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body text\", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"qwerty\");\r",
+							"});\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\");\r",
+							"});\r",
+							"pm.test(\"Check body likes\", function () {\r",
+							"    pm.expect(jsonData.likes).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body link\", function () {\r",
+							"    pm.expect(jsonData.link).to.eql(\"url.ru\");\r",
+							"});\r",
+							"pm.test(\"Check body tags\", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"House\"]);\r",
+							"});\r",
+							"pm.test(\"Check body owner.id\", function () {\r",
+							"    pm.expect(jsonData.owner.id).to.eql(\"6363a8cf7d4f800976f544f8\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.title\", function () {\r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body owner.firstName\", function () {\r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Игорь\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Red\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.picture\", function () {\r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"foto.ru\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate\", function () {\r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/post/{{postId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"{{postId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updatepost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+							"\r",
+							"pm.test(\"Check body text\", function () {\r",
+							"    pm.expect(jsonData.text).to.eql(\"qazwsx\");\r",
+							"});\r",
+							"pm.test(\"Check body image\", function () {\r",
+							"    pm.expect(jsonData.image).to.eql(\"https://sun9-west.userapi.com/sun9-16/s/v1/if1/enDMqoddzhMtDsam4Kcd9p_u_g2wBlGWW2ZeVqvAt47bZyauDXS4X6Jpr7oy41K6rOASiHI7.jpg?size=804x705&quality=96&type=album\");\r",
+							"});\r",
+							"pm.test(\"Check body likes\", function () {\r",
+							"    pm.expect(jsonData.likes).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body link\", function () {\r",
+							"    pm.expect(jsonData.link).to.eql(\"url.ru\");\r",
+							"});\r",
+							"pm.test(\"Check body tags\", function () {\r",
+							"    pm.expect(jsonData.tags).to.eql([\"House\"]);\r",
+							"});\r",
+							"pm.test(\"Check body owner.id\", function () {\r",
+							"    pm.expect(jsonData.owner.id).to.eql(\"6363a8cf7d4f800976f544f8\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.title\", function () {\r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"mr\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body owner.firstName\", function () {\r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Игорь\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.lastName\", function () {\r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Red\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body owner.picture\", function () {\r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"foto.ru\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check body updatedDate\", function () {\r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"qazwsx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/post/{{postId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"{{postId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletepost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"postId\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/post/{{userId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"post",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userId",
+			"value": "6362951e9f193b9296920063"
+		},
+		{
+			"key": "userid",
+			"value": ""
+		},
+		{
+			"key": "text",
+			"value": ""
+		},
+		{
+			"key": "postId",
+			"value": ""
+		}
+	]
+}
