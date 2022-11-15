@@ -10,7 +10,8 @@
 2. [**Автоматизация тестов(Urok_4)**](#автотесты-смотреть-urok_4)
 3. [**Environment**](#environment)    
 4. [**Майнд-карта**](#майнд-карта)
-5. [**Коллекция с запросами**](#тест-кейсы)
+5. [**Коллекция с запросами**](#тест-кейсы)   
+6. [**GitHub(PowerShell)**](#github-powershell)
 
 ## Описание-проекта
 
@@ -109,4 +110,7 @@ ________
 
 ## Environment    
 - app-id (635d1c8f6583157ef61990f2)
-- host (https://dummyapi.io/data/v1)
+- host (https://dummyapi.io/data/v1)    
+
+## GitHub PowerShell
+- Смотреть файл GitHub PowerShell
