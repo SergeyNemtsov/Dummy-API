@@ -11,7 +11,6 @@
 3. [**Environment**](#environment)    
 4. [**Майнд-карта**](#майнд-карта)
 5. [**Коллекция с запросами**](#тест-кейсы)   
-6. [**GitHub(PowerShell)**](#github-powershell)
 
 ## Описание-проекта
 
@@ -112,5 +111,3 @@ ________
 - app-id (635d1c8f6583157ef61990f2)
 - host (https://dummyapi.io/data/v1)    
 
-## GitHub PowerShell
-- Смотреть файл GitHub PowerShell
