@@ -105,7 +105,7 @@ ________
 - GET/post/byId
 - PUT/post(Update)
 - DELETE/post
-Проверку можно посмотреть в файлах(Urok_4)
+Проверку можно посмотреть в файлах(Urok_4_postman_collection)
 
 ## Environment    
 - app-id (635d1c8f6583157ef61990f2)
